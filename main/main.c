@@ -21,7 +21,7 @@ void send_data(char* body) {
     esp_http_client_config_t config = {
         .host              = CONFIG_HTTP_HOST,
         .path              = CONFIG_HTTP_PATH,
-        .port              = 443,
+        .port              = CONFIG_HTTP_PORT,
         .method            = HTTP_METHOD_POST,
         .crt_bundle_attach = esp_crt_bundle_attach,
     };

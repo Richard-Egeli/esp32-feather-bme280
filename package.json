@@ -1,0 +1,14 @@
+{
+    "name": "green-device",
+    "version": "1.0.0",
+    "description": "Green Device is a project to measure temperature, pressure and humidity in a greenhouse.",
+    "scripts": {
+        "release": "standard-version",
+        "release:patch": "standard-version --release-as patch",
+        "release:minor": "standard-version --release-as minor",
+        "release:major": "standard-version --release-as major"
+    },
+    "devDependencies": {
+        "standard-version": "^9.5.0"
+    }
+}
