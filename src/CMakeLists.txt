@@ -1,0 +1,13 @@
+idf_component_register(
+    SRCS
+    wifi.c
+    bme280.c
+    i2c.c
+    sensor.c
+    INCLUDE_DIRS
+    include
+    REQUIRES
+    esp_netif
+    esp_wifi
+    driver
+)

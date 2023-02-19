@@ -1,0 +1,57 @@
+menu "Green Device"
+    menu "HTTP Configuration"
+        config DEVICE_ID
+            string "Device ID"
+            default "GS000000"
+        config HTTP_HOST
+            string "Host"
+            default "api.example.io"
+        config HTTP_PATH
+            string "Path"
+            default "/green"
+        config HTTP_PORT
+            int "Port"
+            default 80
+        config HTTP_TOKEN
+            string "Token"
+            default "Example Token"
+    endmenu
+    menu "Wifi Configuration"
+        config WIFI_SSID
+            string "SSID"
+            default "Example SSID"
+        config WIFI_PASSWORD
+            string "Password"
+            default ""
+        choice AUTH_MODE
+            prompt "Authentication Mode"
+            default WIFI_AUTH_WPA2_PSK
+            help
+                Select the authentication mode for the network.
+
+            config WIFI_AUTH_OPEN
+                bool "Open"
+            config WIFI_AUTH_WEP
+                bool "WEP"
+            config WIFI_AUTH_WPA_PSK
+                bool "WPA-PSK"
+            config WIFI_AUTH_WPA2_PSK
+                bool "WPA2-PSK"
+            config WIFI_AUTH_WPA_WPA2_PSK
+                bool "WPA/WPA2-PSK"
+            config WIFI_AUTH_WPA2_ENTERPRISE
+                bool "WPA2-Enterprise"
+            config WIFI_AUTH_WPA3_PSK
+                bool "WPA3-PSK"
+            config WIFI_AUTH_WPA2_WPA3_PSK
+                bool "WPA2/WPA3-PSK"
+            config WIFI_AUTH_WAPI_PSK
+                bool "WAPI-PSK"
+            config WIFI_AUTH_OWE
+                bool "OWE"
+            config WIFI_AUTH_MAX
+                bool "MAX"
+        endchoice
+
+    endmenu
+endmenu
