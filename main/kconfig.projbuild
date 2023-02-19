@@ -1,4 +1,9 @@
 menu "Green Device"
+    config DATA_INTERVAL
+        int "Data Interval"
+        default 60
+        range 1 86400
+
     menu "HTTP Configuration"
         config DEVICE_ID
             string "Device ID"

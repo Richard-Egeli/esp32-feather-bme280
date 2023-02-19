@@ -65,5 +65,5 @@ void app_main(void) {
     CHECK_ERR(sensor_deinit());
     CHECK_ERR(i2c_deinit());
 
-    esp_deep_sleep(1000000LL * 60);
+    esp_deep_sleep(1000000LL * CONFIG_DATA_INTERVAL);
 }
