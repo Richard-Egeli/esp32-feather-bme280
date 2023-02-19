@@ -19,10 +19,11 @@
 
 void send_data(char* body) {
     esp_http_client_config_t config = {
-        .host   = CONFIG_HTTP_HOST,
-        .path   = CONFIG_HTTP_PATH,
-        .port   = CONFIG_HTTP_PORT,
-        .method = HTTP_METHOD_POST,
+        .host              = CONFIG_HTTP_HOST,
+        .path              = CONFIG_HTTP_PATH,
+        .port              = 443,
+        .method            = HTTP_METHOD_POST,
+        .crt_bundle_attach = esp_crt_bundle_attach,
     };
 
     esp_http_client_handle_t client = esp_http_client_init(&config);
@@ -56,7 +57,7 @@ void app_main(void) {
     CHECK_ERR(i2c_init());
     CHECK_ERR(sensor_init());
 
-    if (wifi_start() + wifi_wait(10000) == ESP_OK) {
+    if (wifi_start() == ESP_OK && wifi_wait(10000) == ESP_OK) {
         char* body = read_data();
         send_data(body);
         free(body);
