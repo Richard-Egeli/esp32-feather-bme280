@@ -17,6 +17,9 @@ menu "Green Device"
         config HTTP_PORT
             int "Port"
             default 80
+        config HTTP_USE_SSL
+            bool "Use SSL"
+            default n
         config HTTP_TOKEN
             string "Token"
             default "Example Token"
