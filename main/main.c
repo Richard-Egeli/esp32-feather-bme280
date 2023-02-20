@@ -37,7 +37,7 @@ void send_data(char* body) {
     }
 
     if (strnlen(CONFIG_HTTP_TOKEN, 1024) > 0) {
-        esp_http_client_set_header(client, "Authorization", "Bearer " CONFIG_HTTP_TOKEN);
+        CHECK_ERR(esp_http_client_set_header(client, "Authorization", "Bearer " CONFIG_HTTP_TOKEN));
     }
 
     CHECK_ERR(esp_http_client_set_header(client, "Content-Type", "application/json"));
